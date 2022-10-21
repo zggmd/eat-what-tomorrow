@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="theme-color" content="#6e1cbb">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>明天早饭吃什么？</title>
+    <style>
+        body {
+            font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        body h2 {
+            color: #6e1cbb;
+        }
+        body #result {
+            margin: 40px 0;
+            font-size: 38px;
+        }
+        .btn {
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+<body>
+<h2>明天早饭吃什么？</h2>
+<div id="result">请点击 👇 按钮</div>
+<button class="btn" onclick="go()">GO！</button>
+</body>
+<script>
+    const list = ['韭菜鸡蛋','尖椒茄子','麻辣豆腐', '粉丝包子','胡萝卜鸡蛋','香辣雪菜']
+    const random = (min, max) => Math.floor(Math.random() * (max - min)) + min;
+    const getV = () => list[random(0, list.length - 1)]
+    const go = () => {
+      const dom = document.getElementById('result')
+      dom.innerHTML =  `<span>${getV()}</span>&nbsp;&nbsp;&nbsp;&nbsp;${getV()}`
+    }
+</script>
+</html>
