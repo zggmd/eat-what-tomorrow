@@ -46,7 +46,13 @@
     const getV = () => list[random(0, list.length - 1)]
     const go = () => {
       const dom = document.getElementById('result')
-      dom.innerHTML =  `<span>${getV()}</span>&nbsp;&nbsp;&nbsp;&nbsp;${getV()}`
+      const v1 = getV()
+      const getDifV = (oldV) => {
+          const _v = getV()
+          return _v === oldV ? getDifV() : _v
+      }
+      
+      dom.innerHTML =  `<span>${v1}</span>&nbsp;&nbsp;&nbsp;&nbsp;${getDifV(v1)}`
     }
 </script>
 </html>
