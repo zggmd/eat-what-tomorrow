@@ -12,6 +12,8 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            background: linear-gradient(to right bottom, #da98e1, #acf7f6, #f6f2c9);
+            height: 100vh;
         }
         body h2 {
             color: #b47fe5;
@@ -47,12 +49,9 @@
     const go = () => {
       const dom = document.getElementById('result')
       const v1 = getV()
-      const getDifV = (oldV) => {
-          const _v = getV()
-          return _v === oldV ? getDifV() : _v
-      }
-      
-      dom.innerHTML =  `<span>${v1}</span>&nbsp;&nbsp;&nbsp;&nbsp;${getDifV(v1)}`
+      const v2 = getV()
+      if (v1 === v2) return go()
+      dom.innerHTML =  `<span>${v1}</span>&nbsp;&nbsp;&nbsp;&nbsp;${v2}`
     }
 </script>
 </html>
